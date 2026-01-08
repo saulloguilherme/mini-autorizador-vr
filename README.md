@@ -1,4 +1,4 @@
-#Teste de programação - VR Benefícios
+# Teste de programação - VR Benefícios
 
 Como parte do processo de seleção, gostaríamos que você desenvolvesse um pequeno sistema, para que possamos ver melhor o seu trabalho.
 
@@ -146,3 +146,30 @@ Desafios (não obrigatórios):
  * é possível construir a solução inteira sem utilizar nenhum if. Só não pode usar *break* e *continue*! Conceitos de orientação a objetos ajudam bastante! 
  * como garantir que 2 transações disparadas ao mesmo tempo não causem problemas relacionados à concorrência?
 Exemplo: dado que um cartão possua R$10.00 de saldo. Se fizermos 2 transações de R$10.00 ao mesmo tempo, em instâncias diferentes da aplicação, como o sistema deverá se comportar?
+
+## Documentação
+
+### Histórico de Commits
+
+Essa seção é destinada para documentar as escolhas e passos realizados durante a implementação do desafio:
+
+#### Primeiro commit
+Commit inicial com somente o README e instruções do desafio.
+
+#### Segundo commit
+O projeto foi criado utilizando Sprint Initializr, as bibliotecas presentes na aplicação são: Lombok, Spring Security, Spring Data JPA, Spring Web e MySQL Driver.
+
+Nessa etapa foram implementadas classes de domínio, sendo Cartão e Transação, e interfaces de repository, CartaoRepository e TransacaoRepository, além da criação dos pacotes para controller, service e dto.
+
+Os nomes da entidades e suas características foram mantidas em português para melhor entendimento dos revisores e conformidade do que foi pedido na seção de Contratos dos Serviços.
+
+Adicionalmente, o docker foi configurado para criação do container da aplicação, para que todos os resultados obtidos sejam iguais, independente da máquina utilizada.
+
+Para rodar a aplicação o comando é:
+
+```bash
+    docker compose up --build
+```
+
+Nota: O Dockerfile está pulando os testes devido ainda não estarem criados.
+
