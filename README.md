@@ -173,3 +173,11 @@ Para rodar a aplicação o comando é:
 
 Nota: O Dockerfile está pulando os testes devido ainda não estarem criados.
 
+#### Terceiro commit
+Foi adicionado o .gitignore para retirar pastas desnecessárias (/.idea e /target).
+
+Nas classes de domínio foi adicionada a notação @Data do Lombok para utilização posterior nas classes de serviço, a senha do cartão também foi alterada para o tipo Integer. Os services foram implementados de modo simplificado, a lógica ainda não está presente, porém a estrutura está montada. 
+
+Os controllers foram configurados com seus devidos endpoints e a resposta do caso ideal de sucesso. A classe de Data Transfer Object da transação foi montada a partir da especificação do desafio, a do cartão foi dividida em 2 partes (request e response), visto que enviar a senha do cartão de volta para o dispositivo pode ser inseguro em alguns casos.
+
+Os casos de resposta não ideais serão tratados utilizando a anotação ControllerAdvice posteriormente.
