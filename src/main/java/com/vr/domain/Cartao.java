@@ -28,4 +28,8 @@ public class Cartao {
         setNumeroCartao(cartaoDTORequest.numeroCartao());
         setSenha(cartaoDTORequest.senha());
     }
+
+    public void subtrairSaldo(BigDecimal valor) {
+        setSaldo(this.saldo.subtract(valor));
+    }
 }

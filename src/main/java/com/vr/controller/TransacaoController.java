@@ -18,7 +18,7 @@ public class TransacaoController {
     TransacaoService transacaoService;
 
     @PostMapping
-    public ResponseEntity<String> realizarTransacao(@RequestBody TransacaoDTO transacaoDTO) throws Exception {
+    public ResponseEntity<String> realizarTransacao(@RequestBody TransacaoDTO transacaoDTO) {
         transacaoService.realizarTransacao(transacaoDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body("OK");
     }

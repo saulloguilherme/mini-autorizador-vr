@@ -1,5 +1,6 @@
 package com.vr.domain;
 
+import com.vr.dto.TransacaoDTO;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -14,9 +15,14 @@ public class Transacao {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID uuid;
 
-    private Integer numeroCartao;
+    private String numeroCartao;
 
     private BigDecimal valor;
 
-    private BigDecimal saldoAnterior;
+    public Transacao(TransacaoDTO transacaoDTO) {
+        this.setValor(transacaoDTO.valor());
+        this.setNumeroCartao(transacaoDTO.numeroCartao());
+    }
+
+    public Transacao() {}
 }

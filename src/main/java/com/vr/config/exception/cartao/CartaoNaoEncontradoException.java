@@ -1,4 +1,4 @@
-package com.vr.config.exception;
+package com.vr.config.exception.cartao;
 
 public class CartaoNaoEncontradoException extends RuntimeException {
     public CartaoNaoEncontradoException() {

@@ -192,3 +192,6 @@ A variável numeroCartao foi alterada pois cartões de 16 números são número 
 O service do Cartão está com a lógica correta e sem a utilização de blocos de código de condição, para tal foram utilizados blocos try/catch, exceptions customizadas e um exception handler (@ControllerAdvice) para tratar erros de cada endpoint.
 
 Nos controllers foi adicionado somente o mapeamento correto para cada endpoint.
+
+#### Sexto commit
+O service da transação foi criado utilizando exceptions, a transação fica salva no banco de dados para posteriores consultas e o valor do cartão é atualizado em caso de sucesso. As respostas estão padronizadas conforme comando do desafio, além disso, uma enumeração foi criada para alertar erros de transação que podem ocorrer. 

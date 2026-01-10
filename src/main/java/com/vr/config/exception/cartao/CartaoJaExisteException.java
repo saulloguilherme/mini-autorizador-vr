@@ -1,4 +1,4 @@
-package com.vr.config.exception;
+package com.vr.config.exception.cartao;
 
 import com.vr.dto.cartao.CartaoDTOResponse;
 import lombok.Getter;

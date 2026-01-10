@@ -1,7 +1,7 @@
 package com.vr.service;
 
-import com.vr.config.exception.CartaoJaExisteException;
-import com.vr.config.exception.CartaoNaoEncontradoException;
+import com.vr.config.exception.cartao.CartaoJaExisteException;
+import com.vr.config.exception.cartao.CartaoNaoEncontradoException;
 import com.vr.domain.Cartao;
 import com.vr.dto.cartao.CartaoDTORequest;
 import com.vr.dto.cartao.CartaoDTOResponse;
@@ -33,9 +33,23 @@ public class CartaoService {
         return response;
     }
 
-    public BigDecimal obterSaldo(String numeroCartao) {
-        Cartao cartao = cartaoRepository.findByNumeroCartao(numeroCartao).orElseThrow(CartaoNaoEncontradoException::new);
-        return cartao.getSaldo();
+    public Cartao obterCartao(String numeroCartao) {
+        return cartaoRepository.findByNumeroCartao(numeroCartao).orElseThrow(CartaoNaoEncontradoException::new);
     }
 
+    public BigDecimal obterSaldo(String numeroCartao) {
+        return obterCartao(numeroCartao).getSaldo();
+    }
+
+    public Boolean validarSenha(Cartao cartao, Integer senha) {
+        return cartao.getSenha().equals(senha);
+    }
+
+    public Boolean validarSaldo(Cartao cartao, BigDecimal valor) {
+        return cartao.getSaldo().compareTo(valor) >= 0;
+    }
+
+    public void salvarCartao(Cartao cartao) {
+        cartaoRepository.save(cartao);
+    }
 }
