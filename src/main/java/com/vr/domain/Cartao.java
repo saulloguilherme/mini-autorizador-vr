@@ -1,5 +1,6 @@
 package com.vr.domain;
 
+import com.vr.dto.cartao.CartaoDTORequest;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -14,9 +15,17 @@ public class Cartao {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID uuid;
 
-    private Integer numeroCartao;
+    @Column(unique = true)
+    private String numeroCartao;
 
     private Integer senha;
 
     private BigDecimal saldo;
+
+    public Cartao() {}
+    
+    public Cartao(CartaoDTORequest cartaoDTORequest) {
+        setNumeroCartao(cartaoDTORequest.numeroCartao());
+        setSenha(cartaoDTORequest.senha());
+    }
 }

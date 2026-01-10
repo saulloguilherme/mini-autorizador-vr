@@ -1,4 +1,4 @@
 package com.vr.dto.cartao;
 
-public record CartaoDTOResponse(Integer numeroCartao) {
+public record CartaoDTOResponse(String numeroCartao) {
 }

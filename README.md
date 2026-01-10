@@ -181,3 +181,14 @@ Nas classes de domínio foi adicionada a notação @Data do Lombok para utiliza�
 Os controllers foram configurados com seus devidos endpoints e a resposta do caso ideal de sucesso. A classe de Data Transfer Object da transação foi montada a partir da especificação do desafio, a do cartão foi dividida em 2 partes (request e response), visto que enviar a senha do cartão de volta para o dispositivo pode ser inseguro em alguns casos.
 
 Os casos de resposta não ideais serão tratados utilizando a anotação ControllerAdvice posteriormente.
+
+#### Quarto commit
+O Spring Security foi configurado utilizando Autenticação Basic, sendo dessa forma possível a testar os endpoints e conferir saídas da API em cada caso.
+As credenciais são login = user e senha = password
+
+#### Quinto commit
+A variável numeroCartao foi alterada pois cartões de 16 números são número maiores que os suportados pelo tipo Integer, além disso foi transformada para ser única, a fim de validar um número para cada cartão.
+
+O service do Cartão está com a lógica correta e sem a utilização de blocos de código de condição, para tal foram utilizados blocos try/catch, exceptions customizadas e um exception handler (@ControllerAdvice) para tratar erros de cada endpoint.
+
+Nos controllers foi adicionado somente o mapeamento correto para cada endpoint.

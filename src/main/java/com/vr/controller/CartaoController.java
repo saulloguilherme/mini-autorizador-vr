@@ -11,22 +11,22 @@ import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 
-@Controller("/cartoes")
+@RestController
+@RequestMapping("/cartoes")
 public class CartaoController {
 
     @Autowired
     CartaoService cartaoService;
 
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<CartaoDTOResponse> criarCartao(@RequestBody CartaoDTORequest cartaoDTORequest) {
         CartaoDTOResponse cartaoCriado = cartaoService.criarCartao(cartaoDTORequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(cartaoCriado);
     }
 
     @GetMapping("/{numeroCartao}")
-    public ResponseEntity<BigDecimal> obterSaldo(@PathVariable Integer numeroCartao) {
+    public ResponseEntity<BigDecimal> obterSaldo(@PathVariable String numeroCartao) {
         BigDecimal saldo = cartaoService.obterSaldo(numeroCartao);
         return ResponseEntity.status(HttpStatus.OK).body(saldo);
     }
-
 }
