@@ -4,7 +4,6 @@ import com.vr.config.exception.cartao.CartaoNaoEncontradoException;
 import com.vr.config.exception.transacao.ErroTransacao;
 import com.vr.config.exception.transacao.TransacaoNaoFoiConcluidaException;
 import com.vr.domain.Cartao;
-import com.vr.domain.Transacao;
 import com.vr.dto.TransacaoDTO;
 import com.vr.repository.TransacaoRepository;
 import org.junit.jupiter.api.Assertions;
@@ -15,11 +14,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.util.Optionals;
 
-import javax.swing.text.html.Option;
 import java.math.BigDecimal;
-import java.util.Optional;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;

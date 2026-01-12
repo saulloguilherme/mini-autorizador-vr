@@ -208,3 +208,15 @@ O Dockerfile foi modificado para rodar os testes em Java, porém é necessário 
 ```
 
 Os testes do serviço de transação e do repositório do cartão foram incluídos. Além disso, o H2 database é utilizado para os testes no repository, utilizando o application-test.properties, com o dialect MySQL para evitar possíveis erros ao integrar a aplicação real ao banco de dados.
+
+#### Nono commit
+Os testes do cartão service foram finalizados, as classes de domínio, transacao repository e DTOs não foram testadas pois foram criadas utilizando as bases da linguagem Java e do Framework Spring Boot, ou seja, bugs serão encontrados nessas classes somente em situações extremas, além de que testar classes simples pode dificultar a manutenção do código (ex: retirada de um atributo de classe).
+
+Recapitulando:
+
+Para conseguir rodar o projeto são necessários esses 2 comandos e os testes já serão feitos a partir do build. As requisições utilizam a autenticação Basic, necessitando das seguintes credenciais: login = user e senha = password (user:password).
+
+```bash
+  docker compose build --no-cache --progress=plain
+  docker compose up
+```
