@@ -195,3 +195,6 @@ Nos controllers foi adicionado somente o mapeamento correto para cada endpoint.
 
 #### Sexto commit
 O service da transação foi criado utilizando exceptions, a transação fica salva no banco de dados para posteriores consultas e o valor do cartão é atualizado em caso de sucesso. As respostas estão padronizadas conforme comando do desafio, além disso, uma enumeração foi criada para alertar erros de transação que podem ocorrer. 
+
+#### Sétimo commit
+O docker-compose foi configurado para que a aplicação espere o banco de dados estar disponível antes de tentar a conexão.

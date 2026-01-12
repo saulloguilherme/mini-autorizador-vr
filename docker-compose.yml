@@ -26,6 +26,10 @@ services:
       MYSQL_DATABASE: miniautorizador
       MYSQL_ROOT_PASSWORD:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    healthcheck:
+      test: mysql --user=root --execute="SHOW DATABASES;"
+      timeout: 10s
+      retries: 10
 
 
   mini-autorizador:
@@ -34,7 +38,8 @@ services:
       dockerfile: Dockerfile
     container_name: mini-autorizador
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
     ports:
       - "8080:8080"
     environment:
