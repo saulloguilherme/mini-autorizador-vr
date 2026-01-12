@@ -198,3 +198,13 @@ O service da transação foi criado utilizando exceptions, a transação fica sa
 
 #### Sétimo commit
 O docker-compose foi configurado para que a aplicação espere o banco de dados estar disponível antes de tentar a conexão.
+
+#### Oitavo commit
+O Dockerfile foi modificado para rodar os testes em Java, porém é necessário fazer o build antes de rodar (up).
+
+```bash
+  docker compose build --no-cache --progress=plain
+  docker compose up
+```
+
+Os testes do serviço de transação e do repositório do cartão foram incluídos. Além disso, o H2 database é utilizado para os testes no repository, utilizando o application-test.properties, com o dialect MySQL para evitar possíveis erros ao integrar a aplicação real ao banco de dados.
